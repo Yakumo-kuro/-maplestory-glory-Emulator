@@ -12,7 +12,6 @@ import matplotlib
 import numpy as np
 
 
-
 top = tkinter.Tk()
 style = ttk.Style()
 style.map("C.TButton",
@@ -97,7 +96,16 @@ def check():
 z= 1
 zl1=[]
 zl2=[]
+def cc():
+	global zl1,zl2,z
+	z= 1
+	zl1=[]
+	zl2=[]
+
 def mk():
+	plt.title("Glory-Emulator")
+	fig = plt.gcf()
+	fig.canvas.set_window_title('模擬次數')
 	global z
 	plt.cla()
 	n= 0
@@ -172,7 +180,7 @@ def mk():
 		plt.text(bo1,bo2,bo2, va= 'bottom',fontsize=9)
 	z+=1
 	if var1.get() == 1:
-		plt.ylabel("次數",fontsize=15)
+		plt.ylabel(" ",fontsize=15)
 		plt.axhline(y=np.mean(zl1),color="Red")
 		plt.text(1, np.mean(zl1), np.around(np.mean(zl1),1), fontsize=10, va='center', ha='center', backgroundcolor='w',alpha=0.5)
 		plt.show()
@@ -182,6 +190,7 @@ def mk():
 
 
 ttk.Button(text="開始模擬", style="C.TButton", command=mk).grid(row=4, column=3)
+ttk.Button(text="清除", style="C.TButton", command=cc).grid(row=5, column=3)
 #ttk.Button(text="曲線圖", style="C.TButton", command=get_v).grid(row=3, column=3)
 var1 = tkinter.IntVar()
 c1 = tkinter.Checkbutton(top, text='曲線圖', variable=var1, onvalue=1, offvalue=0,
