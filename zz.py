@@ -18,7 +18,7 @@ style.map("C.TButton",
 	foreground=[('pressed', 'red'), ('active', 'blue')],
 	background=[('pressed', '!disabled', 'white'), ('active', 'white')]
 	)
-top.title("榮耀卷模擬器v1.2          作者:八雲")
+top.title("榮耀卷模擬器v1.3          作者:八雲")
 top.resizable(0,0)
 top.configure(background='PaleTurquoise1')
 style = ttk.Style()
